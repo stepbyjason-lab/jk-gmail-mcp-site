@@ -1,0 +1,10 @@
+.handoff/
+tests/
+evidence/
+.env*
+*.json
+*.db
+*.sqlite*
+client_secret*
+node_modules/
+.sites-runtime/
