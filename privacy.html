@@ -53,7 +53,13 @@
           </section>
           <section class="card" aria-labelledby="changes"><h2 id="changes">8. 변경과 문의</h2><p>기능이나 데이터 처리 방식이 변경되면 이 문서와 시행일을 갱신합니다. 현재 설명은 설치된 <code>multi-gmail-mcp 1.0.6</code> 소스에서 확인한 동작을 기준으로 합니다. 데이터 처리·연결 해제 관련 문의는 <a href="mailto:ysmercury@gmail.com">ysmercury@gmail.com</a>으로 보내주세요.</p></section>
         </div>
-      </main>
+      <section aria-labelledby="workboard-privacy-heading">
+  <h2 id="workboard-privacy-heading">로컬 업무 보드의 데이터 처리</h2>
+  <p>Windows 로컬 업무 보드는 기존 MCP의 SQLite 토큰 저장소를 사용하거나 변경하지 않습니다. 계정 정보, OAuth 토큰, 추출 후보와 로컬 처리 상태는 Windows 사용자 계정의 CurrentUser DPAPI로 암호화해 해당 프로젝트의 .data/workboard.dpapi에 저장합니다. 암호 해제나 형식 검증에 실패하면 기존 파일을 빈 데이터로 덮어쓰지 않습니다.</p>
+  <p>메일 본문은 처리 중 메모리에서 사용하며 전체 본문을 저장하지 않습니다. 추출 후보에는 제목, 발신자, 짧은 요약, 원문 참조, 확인할 금액이나 기한이 포함될 수 있습니다. 업무 보드는 이 정보를 외부 AI 서비스에 전송하지 않습니다. 기존 MCP를 AI 클라이언트로 사용할 때의 선택한 제공자에게 전달하는 경로는 기존 MCP 관련 설명을 따릅니다.</p>
+  <p>업무 보드의 데이터 사용 목적은 사용자가 허용한 Gmail 계정의 읽기와 로컬 업무 정리입니다. 불분명한 금액, 통화, 날짜는 확인 필요로 표시하며 미확인 금액은 합계에서 제외합니다. 원문과 연결 권한을 직접 확인해 주세요. DPAPI는 같은 Windows 사용자 권한으로 실행되는 다른 프로세스로부터 데이터를 격리하지 않습니다.</p>
+</section>
+</main>
       <footer><p>JK Multi Gmail MCP · 시행일 2026-10-05</p><div class="inline-links"><a href="index.html">앱 소개</a><a href="terms.html">이용약관</a><a href="mailto:ysmercury@gmail.com">문의</a></div></footer>
     </div>
   </div>
