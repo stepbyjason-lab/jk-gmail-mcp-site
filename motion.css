@@ -1,0 +1,36 @@
+
+/* User-requested visible screen choreography and sequential FLOW. */
+h1{font-size:clamp(54px,6.1vw,88px)}.title-line{white-space:nowrap}
+.hero-screen{position:relative;aspect-ratio:1.187;overflow:hidden;background:#f5f6fc}
+.hero-scene{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;opacity:0;transform:translateX(95px) translateY(45px) rotateY(-16deg) rotateZ(5deg) scale(.85);transition:transform 1.05s var(--ease),opacity .65s;will-change:transform,opacity}
+.hero-scene.current{opacity:1;transform:translateX(0) translateY(0) rotateY(0) rotateZ(0) scale(1);z-index:2}
+.hero-scene.leaving{opacity:0;transform:translateX(-105px) translateY(-55px) rotateY(12deg) rotateZ(-4deg) scale(.9);z-index:1}
+.hero-media{animation:preview-float 6s ease-in-out infinite}
+@keyframes preview-float{0%,100%{translate:0 0}50%{translate:0 -22px}}
+.hero-picks{display:flex;gap:0;justify-content:space-between;margin-top:18px;border-bottom:1px solid #ffffff20}
+.hero-picks button{padding:10px 0 13px;border:0;border-bottom:2px solid transparent;background:none;color:#a8adc0;font-size:12px;cursor:pointer}
+.hero-picks button[aria-pressed=true]{color:#d8caff;border-color:#a48bff}
+.hero-media figcaption{display:flex;justify-content:space-between;gap:15px;align-items:center}
+#motion-toggle{font-size:11px;color:#c4bafa;border:0;background:none;cursor:pointer;padding:4px 0}
+.hero-media.paused{animation-play-state:paused}.hero-media.paused .hero-scene{transition:none}
+.flow-panels{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;height:auto;min-height:255px}
+.flow-panel{position:relative;inset:auto;display:block;border-top:1px solid #ffffff2b;padding-top:22px;opacity:.12;visibility:visible;transform:translateY(95px) scale(.85);transition:opacity .65s,transform 1s var(--ease),border-color .5s}
+.flow-panel.active{opacity:1;transform:translateY(0) scale(1);border-color:#9f88f9}
+.flow-panel.active:nth-child(2){transition-delay:.12s}.flow-panel.active:nth-child(3){transition-delay:.24s}
+.flow-panel .step-number{display:block;font-size:50px;line-height:1;margin-bottom:16px}
+.flow-panel h3{font-size:26px;line-height:1.2;margin-bottom:18px}
+.flow-panel p{font-size:13px;line-height:1.7}
+.flow-arrow{position:absolute;right:-26px;top:35px;width:23px;stroke:#9584da;stroke-width:1.5;fill:none}
+.reveal.visible p{animation:paragraph-rise .7s var(--ease) both}
+.permission.visible li{animation:paragraph-rise .7s var(--ease) both}
+.permission.visible li:nth-child(2){animation-delay:.08s}.permission.visible li:nth-child(3){animation-delay:.16s}.permission.visible li:nth-child(4){animation-delay:.24s}
+@keyframes paragraph-rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:760px){.hero-screen{aspect-ratio:1.2}.hero-picks button{font-size:11px}.hero-media figcaption{font-size:9px}.flow-panels{grid-template-columns:1fr;gap:14px;height:310px}.flow-panel{display:grid;grid-template-columns:42px 1fr;gap:0 12px;border:0;border-left:2px solid #ffffff25;padding:8px 0 8px 15px;transform:translateY(45px) scale(.92)}.flow-panel.active{border-color:#9f88f9}.flow-panel .step-number{display:block;font-size:30px;margin:0;grid-row:span 2;padding-top:2px}.flow-panel h3{font-size:21px;margin:0 0 6px}.flow-panel p{font-size:12px;line-height:1.45;grid-column:2;max-width:100%}.flow-arrow{display:none}.flow-content{padding-top:35px}.flow-content h2{font-size:45px}.flow-steps{gap:20px;padding-bottom:14px}.flow-intro{margin-bottom:14px}.flow-hint{margin-top:16px}.flow-panels{margin-top:16px}}
+@media(prefers-reduced-motion:reduce){.hero-media{animation:none}.hero-scene{transition:none}.flow-panel{opacity:1;transform:none}.flow-panels{height:auto}.reveal.visible p,.permission.visible li{animation:none}}
+@media(max-width:1050px) and (min-width:761px){h1{font-size:62px}}
+@media(max-width:760px){h1{font-size:clamp(42px,12.5vw,82px)}}
+/* Narrow screens keep the same sequential story in native document flow. */
+@media(max-width:760px){.workflow{height:auto}.flow-pin{position:relative;top:0;height:auto;min-height:0;overflow:hidden}.flow-panels{height:auto;min-height:0;gap:22px}.flow-panel{min-height:0}.flow-panel p{font-size:13px;line-height:1.6}.flow-panel h3{font-size:23px}.flow-content{padding:50px 0 42px}.flow-hint{margin-top:25px}}
+@media(max-height:780px){.workflow{height:auto}.flow-pin{position:relative;top:0;height:auto;min-height:0}.flow-panels{height:auto}.flow-content{padding:50px 0}}
+html:not(.js) .hero-scene:not(.current){display:none}html:not(.js) .hero-picks,html:not(.js) #motion-toggle{display:none}
+html:not(.js) .hero-media{animation:none}

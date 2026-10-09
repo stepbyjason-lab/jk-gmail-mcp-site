@@ -1,70 +1,103 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>앱 소개 · JK Multi Gmail MCP</title>
-  <meta name="description" content="개인 소유 Gmail 계정을 로컬 AI 클라이언트에서 사용하는 JK Multi Gmail MCP의 목적, 권한과 데이터 처리 안내.">
-  <meta name="referrer" content="no-referrer">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; base-uri 'none'; form-action 'none'">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mailtodo · JK Multi Gmail MCP</title>
+<meta name="description" content="A local Windows work board for Gmail task, reply and invoice candidates. Learn how Mailtodo and JK Multi Gmail MCP use your Google data.">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; script-src 'self'; img-src 'self'; media-src 'self'; base-uri 'none'; form-action 'none'">
+<link rel="stylesheet" href="landing.css"><link rel="stylesheet" href="motion.css"><script src="landing.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">본문으로 건너뛰기</a>
-  <div class="shell">
-    <aside class="sidebar" aria-label="앱 안내">
-      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">JK</span><span class="brand-name">JK Multi<br>Gmail MCP</span></a>
-      <nav aria-label="주 메뉴">
-        <p class="eyebrow">APPLICATION INFO</p>
-        <div class="nav-list">
-          <a class="nav-link" href="index.html" aria-current="page">앱 소개</a>
-          <a class="nav-link" href="privacy.html">개인정보처리방침</a>
-          <a class="nav-link" href="terms.html">이용약관</a>
-        </div>
-      </nav>
-      <div class="sidebar-note"><p>개인용 로컬 연결 도구</p><p>정적 앱 정보 사이트</p></div>
-    </aside>
-    <div class="surface">
-      <header class="page-header"><h1>앱 소개</h1><span class="meta">JK Multi Gmail MCP</span></header>
-      <main id="main">
-        <div class="page-content">
-          <p class="intro">내 Gmail 계정을 로컬 AI 클라이언트와 연결하는 개인용 도구입니다.</p>
-          <section class="card" aria-labelledby="about">
-            <h2 id="about">JK Multi Gmail MCP</h2>
-            <p>운영자 한 사람이 본인 소유의 여러 Gmail 계정을 Claude Code 같은 로컬 AI 클라이언트에서 사용하기 위한 애플리케이션입니다. 사용자 요청에 따라 Gmail 정보를 가져오고 메일 작업을 실행하는 MCP 연결 도구입니다.</p>
-            <dl class="facts"><dt>사용 대상</dt><dd>운영자 본인의 Gmail 계정</dd><dt>사용 환경</dt><dd>사용자 컴퓨터의 MCP 서버와 로컬 AI 클라이언트</dd><dt>운영자 연락처</dt><dd><a href="mailto:ysmercury@gmail.com">ysmercury@gmail.com</a></dd></dl>
-          </section>
-          <div class="card-grid">
-            <section class="card" aria-labelledby="read"><h2 id="read">검색과 읽기</h2><p>요청한 메일을 검색하고 본문·메타데이터를 읽습니다. 결과는 로컬 AI 클라이언트로 전달됩니다.</p></section>
-            <section class="card" aria-labelledby="organize"><h2 id="organize">메일 정리</h2><p>사용자 요청에 따라 라벨을 관리하고, 메일을 보관하거나 읽음 상태를 변경합니다.</p></section>
-            <section class="card" aria-labelledby="send"><h2 id="send">초안과 발송</h2><p>초안을 작성하고 메일 발송·답장을 처리합니다. 발송·답장 요청은 운영자가 AI 클라이언트에서 매 요청마다 확인한 뒤 도구를 호출해야 합니다. MCP 서버 자체는 발송·답장 도구가 호출되면 별도 확인 없이 발송합니다.</p></section>
-          </div>
-          <section class="card" aria-labelledby="permissions">
-            <h2 id="permissions">Google 접근 권한과 사용 목적</h2>
-            <p>로컬 애플리케이션은 Google OAuth를 통해 다음 Gmail 권한을 요청합니다.</p>
-            <ul class="scope-list">
-              <li><code>gmail.readonly</code><span>메일 검색, 본문과 메타데이터 읽기</span></li>
-              <li><code>gmail.send</code><span>운영자가 확인해야 하는 메일 발송과 답장 (서버 자체 확인 단계 없음)</span></li>
-              <li><code>gmail.modify</code><span>초안 작업, 메일에 라벨 적용·제거, 보관 및 읽음 상태 변경</span></li>
-              <li><code>gmail.labels</code><span>라벨 목록 조회</span></li>
-            </ul>
-          </section>
-          <section class="card notice" aria-labelledby="website">
-            <h2 id="website">이 웹사이트의 역할</h2>
-            <p>이곳은 정적 앱 정보 안내 사이트입니다. 메일 화면, 로그인 또는 OAuth 연결 기능을 제공하지 않으며, 사이트 방문으로 Gmail 접근 권한이 부여되지 않습니다. 이 사이트에는 메일 데이터가 없습니다.</p>
-            <p>연결된 메일 내용은 사용자의 AI 클라이언트에서 선택한 AI 제공자에게 전달될 수 있습니다. 로컬 저장과 제공자 처리는 <a href="privacy.html">개인정보처리방침</a>에서 확인할 수 있습니다.</p>
-            <div class="inline-links"><a href="privacy.html">개인정보처리방침 읽기</a><a href="terms.html">이용약관 읽기</a><a href="https://myaccount.google.com/connections">Google 연결 권한 관리</a></div>
-          </section>
-        </div>
-      <section aria-labelledby="workboard-heading">
-  <h2 id="workboard-heading">Windows 로컬 메일 업무 보드</h2>
-  <p>여러 Gmail 계정에서 확인할 할 일, 답장, 청구서 후보를 모아 보는 로컬 업무 보드입니다. 메일 본문의 표현을 로컬 규칙으로 분류하며, 결과는 사용자가 원문과 대조해 확인할 후보입니다. 계정과 검색 필터, 로컬 처리 상태, 후보 기반 통계를 제공합니다.</p>
-  <p>업무 보드는 Gmail 읽기 전용 권한만 요청합니다. 사용자가 직접 최근 30일의 받은편지함을 계정당 최대 25통 가져옵니다. 메일 발송, 초안·라벨·읽음 상태 변경, 결제, 첨부파일·PDF·OCR 처리, 외부 AI 전송, 정기 수집 기능은 제공하지 않습니다.</p>
-  <p>기존 MCP의 네 권한은 그 도구의 기능에 대한 설명입니다. 업무 보드가 네 권한을 모두 요청한다는 뜻이 아닙니다. Google 계정 연결과 실제 메일 운영은 Google의 접근 허용과 사용자 동의가 필요합니다.</p>
-</section>
-</main>
-      <footer><p>JK Multi Gmail MCP · 안내 기준 2026-10-05</p><div class="inline-links"><a href="privacy.html">개인정보처리방침</a><a href="terms.html">이용약관</a><a href="mailto:ysmercury@gmail.com">문의</a></div></footer>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+<header class="nav">
+  <a class="brand" href="index.html"><span class="brand-icon" aria-hidden="true">JK</span><span><strong>Mailtodo</strong><small>JK Multi Gmail MCP</small></span></a>
+  <nav aria-label="Main navigation"><a href="#board">The board</a><a href="#workflow">How it works</a><a href="#privacy">Privacy</a></nav>
+</header>
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="giant-word" aria-hidden="true">MAILTODO</div>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1 id="hero-title"><span class="title-line">Less inbox.</span><span class="title-line">More</span><span class="title-line accent">follow-through.</span></h1>
+        <p>A local Windows work board for the tasks, replies and invoice candidates in your Gmail accounts.</p>
+        <div class="actions"><a class="button" href="#board">Meet your work board <span aria-hidden="true">↗</span></a><a class="text-link" href="#overview"><span class="play-icon" aria-hidden="true">▶</span>Watch the overview</a></div>
+      </div>
+      <figure class="hero-media">
+        <div class="product-frame"><div class="frame-top"><i></i><i></i><i></i><span>Mailtodo · local work board</span></div><div class="hero-screen">
+          <img class="hero-scene current" data-scene="0" src="assets/dashboard.jpg" width="1264" height="1065" alt="Sample task dashboard.">
+          <img class="hero-scene" data-scene="1" src="assets/replies.jpg" width="1264" height="1065" alt="Sample reply candidates." aria-hidden="true">
+          <img class="hero-scene" data-scene="2" src="assets/invoices.jpg" width="1264" height="1065" alt="Sample invoice candidates." aria-hidden="true">
+          <img class="hero-scene" data-scene="3" src="assets/stats.jpg" width="1264" height="1065" alt="Sample account progress." aria-hidden="true">
+        </div></div>
+        <div class="hero-picks" role="group" aria-label="Product preview screens"><button type="button" data-scene-pick="0" aria-pressed="true">Tasks</button><button type="button" data-scene-pick="1" aria-pressed="false">Replies</button><button type="button" data-scene-pick="2" aria-pressed="false">Invoices</button><button type="button" data-scene-pick="3" aria-pressed="false">Progress</button></div>
+        <figcaption><span>Sample data · Korean app UI</span><button id="motion-toggle" type="button">Pause motion</button></figcaption>
+      </figure>
     </div>
-  </div>
+  </section>
+
+  <section id="board" class="board section-light" aria-labelledby="board-title">
+    <div class="wrap">
+      <div class="section-heading reveal"><h2 id="board-title">The inbox is full.<br><span class="accent">What needs you?</span></h2><p>Mailtodo surfaces work from recent mail. You review each candidate against the original message and decide what happens next.</p></div>
+      <div class="feature-row reveal"><span class="number">01</span><h3>Tasks to review</h3><p>Requests and follow-ups, grouped by account and status. Record your progress on the local board.</p><figure><img src="assets/dashboard.jpg" width="1264" height="1065" alt="Sample task board."><figcaption>Task candidates</figcaption></figure></div>
+      <div class="feature-row reveal"><span class="number">02</span><h3>Replies to consider</h3><p>Find messages asking for a response. Review the subject, sender and due date; the board does not send your reply.</p><figure><img src="assets/replies.jpg" width="1264" height="1065" alt="Sample reply candidate list."><figcaption>Reply candidates</figcaption></figure></div>
+      <div class="feature-row reveal"><span class="number">03</span><h3>Invoices to check</h3><p>Keep candidate amounts and deadlines in view. Unclear values need your review. Tracking an invoice does not make a payment.</p><figure><img src="assets/invoices.jpg" width="1264" height="1065" alt="Sample invoice candidate list."><figcaption>Invoice candidates</figcaption></figure></div>
+    </div>
+  </section>
+
+  <section id="overview" class="overview" aria-labelledby="overview-title">
+    <div class="wrap overview-grid">
+      <div class="reveal"><h2 id="overview-title">See the board<br>in <span class="accent">39 seconds.</span></h2><p>A quick look at the local work board, with example accounts and messages.</p><p class="caption">Product overview · example data</p></div>
+      <figure class="video-frame reveal">
+        <video id="product-video" controls preload="metadata" playsinline poster="assets/dashboard.jpg" width="1920" height="1080">
+          <source src="assets/overview.mp4" type="video/mp4">
+          <track kind="captions" src="assets/overview.en.vtt" srclang="en" label="English">
+          Your browser does not support video. <a href="assets/overview.mp4">Open the product overview.</a>
+        </video>
+        <figcaption>English narration. The app screenshots use Korean sample data.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="workflow" class="workflow" aria-labelledby="workflow-title">
+    <div class="flow-pin">
+      <span class="giant-word" aria-hidden="true">FLOW</span>
+      <div class="wrap flow-content">
+        <h2 id="workflow-title">Connect. Read.<br><span class="accent">Review.</span></h2>
+        <p class="flow-intro">A simple workflow on your Windows PC.</p>
+        <div class="flow-steps" role="group" aria-label="Explore the three workflow steps">
+          <button type="button" data-step="0" aria-pressed="true"><span>01</span>Connect</button>
+          <button type="button" data-step="1" aria-pressed="false"><span>02</span>Read</button>
+          <button type="button" data-step="2" aria-pressed="false"><span>03</span>Review</button>
+        </div>
+        <div class="flow-panels">
+          <article class="flow-panel active" data-panel="0"><span class="step-number" aria-hidden="true">01</span><h3>Authorize your<br>own Google account.</h3><p>Use the installed work board to connect your account through Google. The work board requests Gmail read-only access.</p><svg class="flow-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h17m-6-6 6 6-6 6"/></svg></article>
+          <article class="flow-panel" data-panel="1"><span class="step-number" aria-hidden="true">02</span><h3>Read recent<br>inbox mail.</h3><p>Choose when to fetch messages. Collection covers the last 30 days, with up to 25 inbox messages per account.</p><svg class="flow-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h17m-6-6 6 6-6 6"/></svg></article>
+          <article class="flow-panel" data-panel="2"><span class="step-number" aria-hidden="true">03</span><h3>Review candidates.<br>Keep the next step.</h3><p>Check the original mail, confirm dates and amounts, and record task or invoice progress locally. The board does not change Gmail.</p></article>
+        </div>
+        <p class="flow-hint">Scroll to explore the steps, or choose one above.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="privacy" class="privacy section-light" aria-labelledby="privacy-title">
+    <div class="wrap">
+      <div class="section-heading reveal"><h2 id="privacy-title">Different tools.<br><span class="accent">Clear permissions.</span></h2><p>Mailtodo is the work board in JK Multi Gmail MCP. The work board and the MCP connector use separate data paths and permissions.</p></div>
+      <div class="permissions-grid">
+        <article class="permission reveal"><span class="permission-label">WINDOWS WORK BOARD</span><h3>Mailtodo</h3><ul><li>Gmail read-only access</li><li>Encrypted local account, token and candidate storage using Windows CurrentUser DPAPI</li><li>Full message bodies processed in memory</li><li>No external AI, mail sending or Gmail changes</li></ul><p>The board uses <code>gmail.readonly</code>. Fetching is manual. Attachments, PDF processing and OCR are not handled.</p></article>
+        <article class="permission reveal"><span class="permission-label">LOCAL MCP CONNECTOR</span><h3>JK Multi Gmail MCP</h3><ul><li>Mail search and reading</li><li>Sending, replies and drafts</li><li>Message labels, read state and archive</li><li>Your selected AI client and provider</li></ul><p>The existing MCP requests <code>gmail.readonly</code>, <code>gmail.send</code>, <code>gmail.modify</code> and <code>gmail.labels</code> together. These scopes overlap; incremental minimum-per-feature consent is not claimed.</p><p>Its separate local SQLite token store is not encrypted. Email data returned to your AI client may be sent to the AI provider you choose. The operator must confirm each send or reply in the AI client before calling the tool. The MCP server itself sends when called, without an additional confirmation step.</p></article>
+      </div>
+      <div class="privacy-note reveal"><p>Review extracted candidates against the original mail. Invoice tracking does not make payments.</p><a class="inline-link" href="privacy.html">Read the privacy policy <span aria-hidden="true">↗</span></a></div>
+      <details class="faq"><summary>Does this website connect to my Gmail?</summary><p>This is the public information site. The work board and MCP run on your computer. Visiting this page does not grant Gmail access, and this site contains no personal mail data.</p></details>
+      <details class="faq"><summary>Who is the application for?</summary><p>It is a personal tool for the operator's own Gmail accounts. The homepage explains the application and its data use; it does not offer public account registration.</p></details>
+      <details class="faq"><summary>How can I remove Google access?</summary><p>Manage the application's access in <a href="https://myaccount.google.com/connections" rel="noreferrer">your Google account connections</a>. See the privacy policy for the local storage and deletion process.</p></details>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap footer-grid"><div><a class="footer-brand" href="index.html">Mailtodo</a><p>JK Multi Gmail MCP</p></div><nav aria-label="Legal and support"><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms of use</a><a href="mailto:ysmercury@gmail.com">Contact</a><a href="https://myaccount.google.com/connections" rel="noreferrer">Google connection settings</a></nav></div>
+  <div class="wrap footer-bottom"><p>Personal Gmail tools, explained openly.</p><p>© 2026 Mailtodo · JK Multi Gmail MCP</p></div>
+</footer>
 </body>
 </html>
