@@ -17,3 +17,4 @@ html:not(.js) .copy-unit{display:inline;white-space:normal;overflow-wrap:anywher
 .hero-copy{min-width:0}.hero-grid{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
 @media(max-width:760px){.hero-grid{grid-template-columns:minmax(0,1fr)}.hero h1,.hero-copy>p{max-width:100%}}
 @media(max-width:360px){.hero .wrap{width:calc(100% - 24px)}}
+.reply-ai-note{grid-column:1/-1;max-width:850px;color:#f0ebff;font-size:17px;line-height:1.8;margin:0 0 12px}@media(max-width:760px){.reply-ai-note{font-size:15px}}
