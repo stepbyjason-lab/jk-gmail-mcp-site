@@ -6,7 +6,8 @@
 <meta name="description" content="A local Windows work board for Gmail task, reply and invoice candidates. Learn how Mailtodo and JK Multi Gmail MCP use your Google data.">
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; script-src 'self'; img-src 'self'; media-src 'self'; base-uri 'none'; form-action 'none'">
-<link rel="stylesheet" href="landing.css"><link rel="stylesheet" href="motion.css"><script src="landing.js" defer></script>
+<link rel="stylesheet" href="landing.css"><link rel="stylesheet" href="motion.css"><script src="landing.js?v=features-20261011" defer></script>
+  <link rel="stylesheet" href="features.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -37,14 +38,71 @@
     </div>
   </section>
 
-  <section id="board" class="board section-light" aria-labelledby="board-title">
-    <div class="wrap">
-      <div class="section-heading reveal"><h2 id="board-title">The inbox is full.<br><span class="accent">What needs you?</span></h2><p>Mailtodo surfaces work from recent mail. You review each candidate against the original message and decide what happens next.</p></div>
-      <div class="feature-row reveal"><span class="number">01</span><h3>Tasks to review</h3><p>Requests and follow-ups, grouped by account and status. Record your progress on the local board.</p><figure><img src="assets/dashboard.jpg" width="1264" height="1065" alt="Sample task board."><figcaption>Task candidates</figcaption></figure></div>
-      <div class="feature-row reveal"><span class="number">02</span><h3>Replies to consider</h3><p>Find messages asking for a response. Review the subject, sender and due date; the board does not send your reply.</p><figure><img src="assets/replies.jpg" width="1264" height="1065" alt="Sample reply candidate list."><figcaption>Reply candidates</figcaption></figure></div>
-      <div class="feature-row reveal"><span class="number">03</span><h3>Invoices to check</h3><p>Keep candidate amounts and deadlines in view. Unclear values need your review. Tracking an invoice does not make a payment.</p><figure><img src="assets/invoices.jpg" width="1264" height="1065" alt="Sample invoice candidate list."><figcaption>Invoice candidates</figcaption></figure></div>
+  <section id="board" class="feature-suite" aria-labelledby="board-title">
+    <div class="feature-intro wrap">
+      <h2 id="board-title">Less searching.<br><span>More knowing what’s next.</span></h2>
+      <p>A request to review. A reply to consider. An amount to check.<br>See how Mailtodo makes room for each one.</p>
+      <nav class="feature-jumps" aria-label="Explore the work board"><a href="#tasks">Tasks</a><a href="#replies">Replies</a><a href="#invoices">Invoices</a><a href="#reading">Reading</a><button type="button" id="feature-motion-toggle">Pause effects</button></nav>
     </div>
+
+    <noscript><p class="wrap feature-nojs">Static examples are shown. Enable JavaScript to try the controls and motion.</p></noscript>
+    <section id="tasks" class="feature-chapter task-chapter" aria-labelledby="tasks-title">
+      <div class="chapter-inner wrap">
+        <div class="chapter-copy"><span class="chapter-index">01 / Tasks</span><h2 id="tasks-title">Every inbox.<br>One next step.</h2><p>Bring requests from your Gmail accounts into one work board. Check the source, choose what to do, and keep track of progress.</p><p class="try-hint"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg> Filter the accounts. Move an example.</p></div>
+        <div class="task-stage">
+          <div id="mail-space" class="mail-space" aria-hidden="true"><div class="mail-fallback"><i></i><i></i><i></i><i></i></div></div>
+          <div class="demo-board product-surface">
+            <div class="demo-head"><h3>My tasks</h3><span class="demo-boundary">Interactive example · no Gmail connection</span></div>
+            <div class="account-filters" role="group" aria-label="Filter example tasks"><button type="button" data-account="all" aria-pressed="true">All <span>5</span></button><button type="button" data-account="work" aria-pressed="false">Work <span>3</span></button><button type="button" data-account="personal" aria-pressed="false">Personal <span>2</span></button></div>
+            <div class="demo-columns">
+              <section class="demo-column" data-column="todo" aria-label="Example tasks to do"><h4>To do <span data-count="todo">3</span></h4><div class="demo-task-list">
+                <article class="sample-task" data-task="contract" data-owner="work"><div class="task-caption"><i></i><strong>Review revised contract</strong><span>Oct 6</span></div><p>Check the changes before confirming.</p><div class="task-meta"><span><i class="account-dot"></i>Work</span><a href="#reading" data-read="contract">Read source</a></div><button type="button" class="move-task" data-move="contract">Move to In progress <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></button></article>
+                <article class="sample-task" data-task="tax" data-owner="work"><div class="task-caption"><i></i><strong>Review tax invoice</strong><span>Oct 6</span></div><p>Check the amount against the original.</p><div class="task-meta"><span><i class="account-dot"></i>Work</span><a href="#invoices">See invoice</a></div><button type="button" class="move-task" data-move="tax">Move to In progress <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></button></article>
+                <article class="sample-task" data-task="renewal" data-owner="personal"><div class="task-caption"><i></i><strong>Review subscription renewal</strong><span>Oct 8</span></div><p>Decide before the next billing date.</p><div class="task-meta"><span><i class="account-dot personal"></i>Personal</span><span>Example task</span></div><button type="button" class="move-task" data-move="renewal">Move to In progress <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></button></article>
+              </div><p class="demo-empty" hidden>No example tasks in this column.</p></section>
+              <section class="demo-column" data-column="doing" aria-label="Example tasks in progress"><h4>In progress <span data-count="doing">2</span></h4><div class="demo-task-list">
+                <article class="sample-task" data-task="meeting" data-owner="work"><div class="task-caption"><i></i><strong>Prepare meeting notes</strong><span>Oct 7</span></div><p>Review the agenda before the call.</p><div class="task-meta"><span><i class="account-dot"></i>Work</span><span>Example task</span></div><button type="button" class="move-task" data-move="meeting">Move to To do <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></button></article>
+                <article class="sample-task" data-task="travel" data-owner="personal"><div class="task-caption"><i></i><strong>Confirm travel details</strong><span>Oct 7</span></div><p>Double-check your booking dates.</p><div class="task-meta"><span><i class="account-dot personal"></i>Personal</span><span>Example task</span></div><button type="button" class="move-task" data-move="travel">Move to To do <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></button></article>
+              </div><p class="demo-empty" hidden>No example tasks in this column.</p></section>
+            </div>
+            <p class="demo-status" id="task-demo-status" role="status" aria-live="polite">Five fictional tasks. Changes stay in this preview.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="replies" class="feature-chapter reply-chapter" aria-labelledby="replies-title">
+      <div class="chapter-inner wrap">
+        <div class="chapter-copy"><span class="chapter-index">02 / Replies</span><h2 id="replies-title">Know what<br>needs a reply.</h2><p>Go beyond a subject line. Open the message, find the request, and decide how to respond.</p><p class="try-hint"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg> Choose a message. Find the request.</p></div>
+        <div class="reply-stage">
+          <div class="reply-stack product-surface"><h3>Replies to consider</h3><div role="group" aria-label="Choose an example message"><button type="button" class="reply-preview selected" data-reply="dates" aria-pressed="true"><span class="sender-orb">W</span><span><strong>Confirm the meeting dates</strong><small>team@example.com · Work</small></span><i></i></button><button type="button" class="reply-preview" data-reply="booking" aria-pressed="false"><span class="sender-orb pink">P</span><span><strong>Check the travel booking</strong><small>travel@example.com · Personal</small></span><i></i></button></div><p class="demo-boundary">Interactive example · no Gmail connection</p></div>
+          <article class="reply-letter product-surface" aria-labelledby="reply-source-title"><div class="letter-meta"><span class="sender-orb">W</span><div><strong id="reply-source-sender">team@example.com</strong><span>To: you · Oct 6, 2026</span></div><span class="review-chip">Needs review</span></div><h3 id="reply-source-title">Confirm the meeting dates</h3><div class="reply-source-body"><p id="reply-source-opening">Hi there,</p><p id="reply-source-context">Thank you for reviewing the project plan. We’re ready to arrange the next conversation.</p><p><mark id="reply-source-request">Please confirm the dates that work for you.</mark></p><p id="reply-source-ending">Once we hear back, we’ll arrange the meeting. Thanks for taking a look.</p></div><button type="button" id="reveal-request" class="demo-primary">Highlight example request <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></button><a href="#reading" data-read="dates" class="reader-link" id="reply-reader-link">Open in the reading view</a><p class="demo-status" id="reply-demo-status" role="status" aria-live="polite">A reply candidate, not an automatic response.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="invoices" class="feature-chapter invoice-chapter" aria-labelledby="invoices-title">
+      <div class="chapter-inner wrap">
+        <div class="chapter-copy"><span class="chapter-index">03 / Invoices</span><h2 id="invoices-title">Numbers<br>worth checking.</h2><p>Keep the amount and due date in view. Review the original before including a candidate in your local total.</p><p class="try-hint"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg> Match the amount. Confirm the example.</p></div>
+        <div class="invoice-stage">
+          <div class="receipt-sheet"><div class="receipt-fold"></div><span class="receipt-heading">INVOICE</span><span class="receipt-sender">billing@example.com</span><div class="receipt-lines"><i></i><i></i><i></i></div><div class="receipt-total"><span>Amount stated in example mail</span><strong>KRW 128,000</strong></div><div class="receipt-due"><span>Due date</span><strong>Oct 6, 2026</strong></div><span class="receipt-foot">September tax invoice<br>Fictional example · source text only</span></div>
+          <div class="invoice-preview product-surface"><div class="demo-head"><h3>Check the details</h3><span class="demo-boundary">Interactive example</span></div><dl class="invoice-fields"><div><dt>Subject</dt><dd>September tax invoice</dd></div><div class="amount-field"><dt>Amount</dt><dd>KRW 128,000</dd></div><div><dt>Due</dt><dd>Oct 6, 2026</dd></div><div><dt>Review</dt><dd id="invoice-review-state">Not verified</dd></div></dl><button type="button" id="verify-invoice" class="demo-primary">Verify example amount <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></button><div class="verified-total"><span>Verified preview total</span><strong id="invoice-demo-total">KRW 0</strong></div><p class="demo-status" id="invoice-demo-status" role="status" aria-live="polite">Unverified amounts stay out of the total.</p><p class="invoice-boundary"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v1"/></svg>Local tracking. No payment. No Gmail connection.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reading" class="feature-chapter reading-chapter" aria-labelledby="reading-title">
+      <div class="wrap reading-inner">
+        <div class="reading-heading"><div><span class="chapter-index">04 / Reading</span><h2 id="reading-title">Make room to read.</h2><p>A calmer view of the original message.<br> Choose the size, spacing and contrast that feel right.</p></div><span class="demo-boundary">Interactive example · no Gmail connection</span></div>
+        <div class="reader-preview" data-reader-theme="sepia">
+          <div class="reading-toolbar"><label>Text size<select id="preview-reader-size"><option value="20">20px</option><option value="24" selected>24px</option><option value="28">28px</option></select></label><label>Line spacing<select id="preview-reader-spacing"><option value="1.5">1.5</option><option value="1.8" selected>1.8</option><option value="2.1">2.1</option></select></label><label>Column width<select id="preview-reader-width"><option value="52">Narrow</option><option value="64" selected>Standard</option><option value="78">Wide</option></select></label><div class="reader-themes" role="group" aria-label="Example reading theme"><button type="button" data-theme="light" aria-pressed="false">Light</button><button type="button" data-theme="sepia" aria-pressed="true">Sepia</button><button type="button" data-theme="dark" aria-pressed="false">Dark</button></div></div>
+          <div class="book-stage"><div class="book-spine" aria-hidden="true"><span>Same message.<br>A calmer view.</span></div><article class="reading-page"><div class="reading-meta"><span id="reading-sender">From: team@example.com</span><span>Oct 6, 2026</span></div><h3 id="reading-subject">Product planning update</h3><div id="reading-body"><p>We’re entering an important phase of the project, and I wanted to share a few key points from our discussion.</p><p>The focus for next month is on refining the experience, incorporating feedback and preparing the next steps. We’ll work closely with the team to make sure the details are ready.</p><p>Please review the plan when you have a moment. If you have any thoughts or questions, we would love to hear them.</p></div><p class="reading-foot">Fictional example message · source text only</p></article></div>
+        </div>
+        <p class="reading-note">The work board reads source text. It doesn’t mark Gmail messages as read, send a reply, or load remote mail images.</p>
+      </div>
+    </section>
   </section>
+
 
   <section id="overview" class="overview" aria-labelledby="overview-title">
     <div class="wrap overview-grid">
@@ -99,5 +157,10 @@
   <div class="wrap footer-grid"><div><a class="footer-brand" href="index.html">Mailtodo</a><p>JK Multi Gmail MCP</p></div><nav aria-label="Legal and support"><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms of use</a><a href="mailto:ysmercury@gmail.com">Contact</a><a href="https://myaccount.google.com/connections" rel="noreferrer">Google connection settings</a></nav></div>
   <div class="wrap footer-bottom"><p>Personal Gmail tools, explained openly.</p><p>© 2026 Mailtodo · JK Multi Gmail MCP</p></div>
 </footer>
+  <script type="module" src="features.js"></script>
 </body>
 </html>
+
+
+
+

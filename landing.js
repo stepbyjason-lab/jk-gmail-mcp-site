@@ -18,7 +18,7 @@ const video=document.querySelector('#product-video');document.addEventListener('
 const scenes=[...document.querySelectorAll('.hero-scene')],picks=[...document.querySelectorAll('[data-scene-pick]')],toggle=document.querySelector('#motion-toggle');
 let selected=0,timer=null,paused=false,heroVisible=true;
 function choose(i){scenes.forEach((s,n)=>{s.classList.toggle('leaving',n===selected&&n!==i);s.classList.toggle('current',n===i);s.setAttribute('aria-hidden',String(n!==i));});picks.forEach((b,n)=>b.setAttribute('aria-pressed',String(n===i)));selected=i;}
-function manageMotion(){if(timer){clearInterval(timer);timer=null;}const stop=paused||reduced.matches||document.hidden||!heroVisible;media.classList.toggle('paused',stop);toggle.removeAttribute('aria-pressed');toggle.textContent=reduced.matches?'Reduced motion':paused?'Resume motion':'Pause motion';toggle.disabled=reduced.matches;if(!stop)timer=setInterval(()=>choose((selected+1)%scenes.length),3800);}
+function manageMotion(){if(timer){clearInterval(timer);timer=null;}const stop=paused||reduced.matches||document.hidden||!heroVisible;media.classList.toggle('paused',stop);toggle.removeAttribute('aria-pressed');toggle.textContent=reduced.matches?'Reduced motion':paused?'Resume motion':'Pause motion';toggle.disabled=reduced.matches;document.dispatchEvent(new CustomEvent('mailtodo-motion',{detail:{paused:paused||reduced.matches}}));if(!stop)timer=setInterval(()=>choose((selected+1)%scenes.length),3800);}
 picks.forEach((button,i)=>button.addEventListener('click',()=>{choose(i);manageMotion();}));
 toggle.addEventListener('click',()=>{paused=!paused;manageMotion();});
 document.addEventListener('visibilitychange',manageMotion);onPreferenceChange(manageMotion);
