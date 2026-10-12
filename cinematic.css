@@ -1,4 +1,6 @@
 body{font-family:"Segoe UI","Malgun Gothic","Apple SD Gothic Neo",Arial,sans-serif}
+/* Keep the equivalent DOM label available to assistive technology; visible text travels with the paper. */
+.cinema-pin[data-receipt-label="attached"] .story-amount{position:absolute;left:0;top:0;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;transform:none}
 html[lang=ko] p,html[lang=ko] h1,html[lang=ko] h2,html[lang=ko] h3{word-break:keep-all;overflow-wrap:break-word}
 .copy-unit{display:inline-block;white-space:nowrap}.copy-unit.copy-wrap{display:inline;white-space:normal;overflow-wrap:anywhere}.copy-accent{color:var(--accent)}.section-light .copy-accent,.overview .copy-accent{color:var(--light-accent)}
 .nav{gap:24px}.nav>nav{margin-left:auto}.language-switch{display:flex;border:1px solid #ffffff30;border-radius:30px;padding:3px;gap:2px;white-space:nowrap;flex-shrink:0;font-size:12px}.language-switch a{display:grid;place-items:center;min-height:34px;padding:0 14px;border:1px solid transparent;border-radius:24px}.language-switch a[aria-current=page]{border-color:#a08afb;background:#9c86f51f;color:#fff}.language-switch a:hover{background:#ffffff15}

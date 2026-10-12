@@ -1,4 +1,4 @@
-import {createCinematicSpace,gsap,ScrollTrigger} from './features-webgl.bundle.js?v=cinema-20261011';
+import {createCinematicSpace,gsap,ScrollTrigger} from './features-webgl.bundle.js?v=font-receipt-20261012';
 const root=document.documentElement,reduced=matchMedia('(prefers-reduced-motion: reduce)');
 gsap.registerPlugin(ScrollTrigger);
 let paused=root.dataset.motionPaused==='true',disposed=false;const worlds=[],visibility=new Map();
